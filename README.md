@@ -1,11 +1,13 @@
-SEEL 4213 IoT-Project This is my class IoT Project respository.
+# SEEL 4213 IoT Project
 
-Group Name: Leave it To Allah
+This is my class IoT project repository.
 
-Group Members:
+## 👥 Group Name
+Leave it To Allah
 
-1-Naser Mohammud Drwish Mostafa Abdo
+## 👤 Group Members
+1. Naser Mohammad Drvish Mostafa Abdo  
+2. Ali Mohammad Ahmad Sharaf Ibrahim  
 
-2-ALI MOHAMMAD AHMAD SHARAF IBRAHIM
-
-Project Description This project is for learning basic IoT Development
+## 📌 Project Description
+This project focuses on learning basic IoT development.
