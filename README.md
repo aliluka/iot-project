@@ -26,8 +26,3 @@ CONFLICT TEST - NASER
 
 
 
-
-
-
-## Naser's Version
-
