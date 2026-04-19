@@ -21,10 +21,9 @@ Week 3 task by Ali \& Nasser
 
 
 
+VERSION\_NASER
 
 
 
 ## Nasser's Version
-
-
 
