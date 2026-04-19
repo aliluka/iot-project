@@ -17,7 +17,7 @@ This project focuses on learning basic IoT development.
 
 Week 3 task by Ali \& Nasser
 
-CONFLICT TEST - NASER
+
 
 
 
