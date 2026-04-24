@@ -17,11 +17,6 @@ This project focuses on learning basic IoT development.
 
 Week 3 task by Ali \& Nasser
 
-## Ali's Version
-
-version_Ali
-
-
-VERSION_NASER
+ali's edit 
 
 
