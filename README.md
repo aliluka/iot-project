@@ -19,11 +19,5 @@ Week 3 task by Ali \& Nasser
 
 ## Ali's Version
 
-version\_Ali
-
 naser's edit
-
-
-
-VERSION\_NASER
 
