@@ -15,7 +15,7 @@ Leave it To Allah
 
 This project focuses on learning basic IoT development.
 
-Week 3 task by Ali only
+week 3 task by ali and naser
 
 ali's edit
 aliii
