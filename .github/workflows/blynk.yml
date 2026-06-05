@@ -1,0 +1,65 @@
+name: Blynk CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── Job 1: Run your Blynk script with real credentials ──────────────────
+  blynk-publish:
+    name: Connect to Blynk (real token)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Blynk device script
+        env:
+          BLYNK_AUTH_TOKEN: ${{ secrets.BLYNK_AUTH_TOKEN }}
+          BLYNK_TEMPLATE_ID: ${{ secrets.BLYNK_TEMPLATE_ID }}
+        run: python blynk_device.py
+
+  # ── Job 2: Test failure scenario (bad token) ────────────────────────────
+  blynk-failure-test:
+    name: Failure test (invalid token)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run with bad token (should fail)
+        id: bad_run
+        continue-on-error: true
+        env:
+          BLYNK_AUTH_TOKEN: "INVALID_TOKEN_FOR_TESTING"
+          BLYNK_TEMPLATE_ID: ${{ secrets.BLYNK_TEMPLATE_ID }}
+        run: python blynk_device.py
+
+      - name: Verify failure was caught
+        run: |
+          if [ "${{ steps.bad_run.outcome }}" == "success" ]; then
+            echo "ERROR: Bad token should have caused a failure!"
+            exit 1
+          else
+            echo "PASS: Bad token correctly caused a failure."
+          fi
