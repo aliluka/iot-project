@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
       - name: Run Blynk device script
         env:
           BLYNK_AUTH_TOKEN: ${{ secrets.BLYNK_AUTH_TOKEN }}
@@ -30,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      
       - name: Run with bad token (should fail)
         id: bad_run
         continue-on-error: true
